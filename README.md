@@ -1,4 +1,4 @@
-# 🦥 TabSitter (The Browser Tab Sloth)
+# TabSitter (The Browser Tab Sloth)
 
 > **"Slow & Steady Memory for Your Browser"**  
 > A hybrid local-cloud AI Chrome Extension that solves tab overload by extracting user intent, creating 768-dimensional semantic embeddings locally via Ollama, and orchestrating agentic page monitoring with Temporal & Browserbase Stagehand.
@@ -14,7 +14,7 @@
 
 <br/>
 
-### 🌟 Featured Categories
+### Featured Categories
 
 [![Chrome Extension](https://img.shields.io/badge/Chrome_Extension-Manifest_V3-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](#)
 [![React](https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](#)
@@ -26,7 +26,7 @@
 
 <br/>
 
-### 🤝 Partner Categories
+### Partner Categories
 
 [![MongoDB Atlas](https://img.shields.io/badge/MongoDB_Atlas-Vector_Search-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](#)
 [![Temporal](https://img.shields.io/badge/Temporal-Temporal_Cloud-000000?style=for-the-badge&logo=temporal&logoColor=white)](#)
@@ -36,7 +36,7 @@
 
 ---
 
-## 🏛️ System Architecture & Separation of Concerns
+## System Architecture & Separation of Concerns
 
 ```
                   ┌────────────────────────────────────────┐
@@ -68,7 +68,7 @@
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```text
 TabSitter/
@@ -80,7 +80,7 @@ TabSitter/
 
 ---
 
-## 🚀 Quick Start Guide
+## Quick Start Guide
 
 ### Prerequisites
 
@@ -182,7 +182,7 @@ TabSitter/
 
 ---
 
-## 🛡️ Hackathon Guardrails Checklist
+## Hackathon Guardrails Checklist
 
 - [x] **No Cloud Inference:** Zero external LLM SDKs in `/api`.
 - [x] **768-Dimension Vectors:** Formatted for `nomic-embed-text`.
