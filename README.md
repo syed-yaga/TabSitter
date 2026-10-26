@@ -9,7 +9,6 @@
 
 [![Hacktoberfest 2026](https://img.shields.io/badge/Hacktoberfest_2026-Slow_and_Steady-FF7844?style=for-the-badge&logo=hacktoberfest&logoColor=white)](#)
 [![Live Demo](https://img.shields.io/badge/Live_Demo-Render-46E3B7?style=for-the-badge&logo=render&logoColor=black)](#)
-[![Open Weights: Gemma](https://img.shields.io/badge/Open_Weights-Gemma-4285F4?style=for-the-badge&logo=google&logoColor=white)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](#)
 
 <br/>
@@ -17,10 +16,7 @@
 ### Featured Categories
 
 [![Chrome Extension](https://img.shields.io/badge/Chrome_Extension-Manifest_V3-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](#)
-[![React](https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](#)
-[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](#)
-[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](#)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white)](#)
+[![Open Weights: Gemma](https://img.shields.io/badge/Open_Weights-Gemma-4285F4?style=for-the-badge&logo=google&logoColor=white)](#)
 [![Render API](https://img.shields.io/badge/Render-Cloud_API-46E3B7?style=for-the-badge&logo=render&logoColor=black)](#)
 [![Local AI](https://img.shields.io/badge/Local_AI-Ollama-000000?style=for-the-badge&logo=ollama&logoColor=white)](#)
 
