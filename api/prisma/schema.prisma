@@ -1,0 +1,41 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model SavedPage {
+  id        String      @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String
+  url       String
+  title     String
+  summary   String
+  intent    String?
+  projectId String?     @db.ObjectId
+  project   Project?    @relation(fields: [projectId], references: [id])
+  embedding Float[]
+  status    String      @default("hibernating")
+  createdAt DateTime    @default(now())
+  watches   PageWatch[]
+}
+
+model Project {
+  id          String      @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String
+  name        String
+  description String?
+  createdAt   DateTime    @default(now())
+  savedPages  SavedPage[]
+}
+
+model PageWatch {
+  id           String    @id @default(auto()) @map("_id") @db.ObjectId
+  userId       String
+  savedPageId  String    @db.ObjectId
+  savedPage    SavedPage @relation(fields: [savedPageId], references: [id])
+  targetIntent String
+  cronSchedule String
+}

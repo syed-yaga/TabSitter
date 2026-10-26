@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "TabSitter",
+  "version": "1.0.0",
+  "description": "The Browser Tab Sloth - Local AI semantic memory and tab hibernation",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "http://localhost:11434/*",
+    "http://localhost:3000/*",
+    "https://*.onrender.com/*",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "TabSitter - Hammock Mode"
+  },
+  "background": {
+    "service_worker": "src/background/index.js",
+    "type": "module"
+  }
+}

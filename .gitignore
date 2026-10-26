@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Environment configs (API keys, secrets)
+.env
+*.local
+
+# Logs & temp files
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+#prd
+prd.md
