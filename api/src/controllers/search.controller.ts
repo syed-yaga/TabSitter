@@ -127,7 +127,7 @@ export async function searchPages(req: Request, res: Response): Promise<void> {
       });
 
       const scored = allPages
-        .map((page) => ({
+        .map((page: any) => ({
           id: page.id,
           userId: page.userId,
           url: page.url,
@@ -139,8 +139,8 @@ export async function searchPages(req: Request, res: Response): Promise<void> {
           createdAt: page.createdAt,
           score: cosineSimilarity(embedding, page.embedding),
         }))
-        .filter((item) => item.score > 0)
-        .sort((a, b) => b.score - a.score)
+        .filter((item: any) => item.score > 0)
+        .sort((a: any, b: any) => b.score - a.score)
         .slice(0, 5);
 
       res.status(200).json({
