@@ -5,6 +5,37 @@
 
 ---
 
+<div align="center">
+
+[![Hacktoberfest 2026](https://img.shields.io/badge/Hacktoberfest_2026-Slow_and_Steady-FF7844?style=for-the-badge&logo=hacktoberfest&logoColor=white)](#)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Render-46E3B7?style=for-the-badge&logo=render&logoColor=black)](#)
+[![Open Weights: Gemma](https://img.shields.io/badge/Open_Weights-Gemma-4285F4?style=for-the-badge&logo=google&logoColor=white)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](#)
+
+<br/>
+
+### 🌟 Featured Categories
+
+[![Chrome Extension](https://img.shields.io/badge/Chrome_Extension-Manifest_V3-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](#)
+[![React](https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](#)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](#)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](#)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white)](#)
+[![Render API](https://img.shields.io/badge/Render-Cloud_API-46E3B7?style=for-the-badge&logo=render&logoColor=black)](#)
+[![Local AI](https://img.shields.io/badge/Local_AI-Ollama-000000?style=for-the-badge&logo=ollama&logoColor=white)](#)
+
+<br/>
+
+### 🤝 Partner Categories
+
+[![MongoDB Atlas](https://img.shields.io/badge/MongoDB_Atlas-Vector_Search-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](#)
+[![Temporal](https://img.shields.io/badge/Temporal-Temporal_Cloud-000000?style=for-the-badge&logo=temporal&logoColor=white)](#)
+[![Browserbase](https://img.shields.io/badge/Browserbase-Headless_Browser-FF4F00?style=for-the-badge&logo=googlechrome&logoColor=white)](#)
+
+</div>
+
+---
+
 ## 🏛️ System Architecture & Separation of Concerns
 
 ```
@@ -52,6 +83,7 @@ TabSitter/
 ## 🚀 Quick Start Guide
 
 ### Prerequisites
+
 1. **Node.js** (v18+ or v24+)
 2. **Ollama** installed and running:
    ```bash
@@ -59,7 +91,7 @@ TabSitter/
    ollama pull nomic-embed-text
    ollama serve
    ```
-   *(Note: Ollama CORS should permit Chrome Extensions: `OLLAMA_ORIGINS="chrome-extension://*"`)*
+   _(Note: Ollama CORS should permit Chrome Extensions: `OLLAMA_ORIGINS="chrome-extension://_"`)\*
 
 ---
 
@@ -87,11 +119,12 @@ TabSitter/
    ```
 
 #### REST Endpoints
-* `POST /api/pages`: Ingests tab bundles with 768-dim embeddings.
-* `GET /api/projects`: Retrieves project clusters and related pages.
-* `POST /api/search`: Executes MongoDB `$vectorSearch` pipeline on the `embedding` field using cosine similarity via `prisma.savedPage.aggregateRaw()`.
-* `PUT /api/pages/:id/status`: Updates page status (e.g. `"reawakened"`).
-* `POST /api/watches`: Registers a new `PageWatch`.
+
+- `POST /api/pages`: Ingests tab bundles with 768-dim embeddings.
+- `GET /api/projects`: Retrieves project clusters and related pages.
+- `POST /api/search`: Executes MongoDB `$vectorSearch` pipeline on the `embedding` field using cosine similarity via `prisma.savedPage.aggregateRaw()`.
+- `PUT /api/pages/:id/status`: Updates page status (e.g. `"reawakened"`).
+- `POST /api/watches`: Registers a new `PageWatch`.
 
 ---
 
@@ -105,7 +138,7 @@ TabSitter/
    ```bash
    npm run build
    ```
-   *Compiled production build will be generated in `extension/dist`.*
+   _Compiled production build will be generated in `extension/dist`._
 3. Load into Google Chrome:
    - Open Chrome and navigate to `chrome://extensions/`
    - Enable **Developer mode** (top-right toggle)
@@ -113,11 +146,12 @@ TabSitter/
    - Select the `TabSitter/extension/dist` directory!
 
 #### Key Features & Safety Mechanisms
-* **Hammock Mode:** Scans current window tabs, sanitizes DOM with `@mozilla/readability`, prompts local Gemma 2 for `{ summary, intent, suggestedProject }`, produces 768-dim embeddings with Nomic, and saves to the Cloud API.
-* **Strict Tab Safety Constraint:** `chrome.tabs.remove(tabIds)` is executed **ONLY** if the Cloud API responds with `200 OK`. If the API fails or is offline, all tabs are preserved.
-* **Lazy Recall:** Vectorizes vague user queries on-the-fly and runs cosine vector search against sleeping tabs.
-* **Canopy Clusters:** Displays sleeping tabs organized by automatically created project clusters.
-* **Offline Detection:** If Ollama is offline, displays a user-friendly banner: *"Local AI engine is offline. Please start Ollama."*
+
+- **Hammock Mode:** Scans current window tabs, sanitizes DOM with `@mozilla/readability`, prompts local Gemma 2 for `{ summary, intent, suggestedProject }`, produces 768-dim embeddings with Nomic, and saves to the Cloud API.
+- **Strict Tab Safety Constraint:** `chrome.tabs.remove(tabIds)` is executed **ONLY** if the Cloud API responds with `200 OK`. If the API fails or is offline, all tabs are preserved.
+- **Lazy Recall:** Vectorizes vague user queries on-the-fly and runs cosine vector search against sleeping tabs.
+- **Canopy Clusters:** Displays sleeping tabs organized by automatically created project clusters.
+- **Offline Detection:** If Ollama is offline, displays a user-friendly banner: _"Local AI engine is offline. Please start Ollama."_
 
 ---
 
@@ -135,7 +169,7 @@ TabSitter/
    ```bash
    npm run test:evaluate
    ```
-   *Runs `extractAndEvaluatePage` using headless Chromium, extracts content, and evaluates semantic changes via local Ollama.*
+   _Runs `extractAndEvaluatePage` using headless Chromium, extracts content, and evaluates semantic changes via local Ollama._
 4. Start the Temporal Worker:
    ```bash
    # Ensure Temporal server is running: temporal server start-dev
@@ -155,3 +189,9 @@ TabSitter/
 - [x] **MongoDB Vector Search:** Utilizes `prisma.savedPage.aggregateRaw()` with `$vectorSearch`.
 - [x] **Lightweight Sanitization:** Implemented with `@mozilla/readability`.
 - [x] **Strict Safety Constraint:** Tab removal gated by HTTP 200 response from API.
+
+---
+
+## License
+
+MIT License. Built for Hacktoberfest 2026.
